@@ -1,26 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Outlet } from 'react-router-dom';
 import {RiDashboardFill} from 'react-icons/ri';
 import {AiFillHome} from 'react-icons/ai';
 import {BsFillFileBarGraphFill} from 'react-icons/bs';
 import {MdBatchPrediction} from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
 
 import './Layout.css';
 import imgs from '../assets/img3.png';
-
+import {selectpage} from '../features/navigationSlice';
+import {setPage} from '../features/navigationSlice';
 
 const Layout = () => {
     const [activeLink, setActiveLink] = useState('dashboard');
     const navigate = useNavigate();
+    const page = useSelector(selectpage);
+    let dispatch = useDispatch();
 
+    useEffect(() => {
+        navigate(page.currentPage);
+    }, [page, navigate]);
+
+    console.log(activeLink);
     const changeLink= (link) => {
         if(link === 'dashboard') {
             setActiveLink(link);
             navigate("");
+            dispatch(setPage(""));
         }else{
             setActiveLink(link);
             navigate(link);
+            dispatch(setPage(link));
         }
 
     }
