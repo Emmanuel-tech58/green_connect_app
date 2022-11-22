@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {HiMenu} from 'react-icons/hi'
 
 const HomeNav = () => {
     return (
         <>
-            <nav className='w-full flex justify-between items-center py-5 px-2' style={{ borderBottom: '1px solid gray' }}>
+            <nav 
+                className='w-full flex justify-between items-center pb-2 sm:py-5 sm:px-2 border-b-[1px] border-gray-300'
+            >
                 <div>
                     <h2 className='text-white text-2xl'>greenConect</h2>
                 </div>
@@ -14,6 +17,9 @@ const HomeNav = () => {
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                 </ul>
+                <div className='sm:hidden'>
+                    <HiMenu size={30} color="#fff"/>
+                </div>
             </nav>
         </>
     );

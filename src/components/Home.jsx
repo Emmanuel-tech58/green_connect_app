@@ -19,7 +19,7 @@ const Home = () => {
                     style={{ backgroundColor: 'rgba(0,0,0,.3)' }}
                 >
                     <HomeNav/>
-                    <div className='flex flex-col sm:flex-row h-2/4 mt-20'>
+                    <div className='flex flex-col sm:flex-row items-center sm:justify-start sm:h-2/4 mt-10 s:mt-20'>
                         <div className='sm:w-3/5 flex flex-col justify-center sm:pl-20 h-full'>
                             <h1 className='text-3xl text-white font-bold tracking-wide'>GreenConnect</h1>
                             <p className='text-2xl text-gray-400 w-3/5'>Predict soil moisture content, analyze, visualize and practice smart farming</p>
